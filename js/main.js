@@ -1,11 +1,19 @@
-let nombre = prompt ("Ingrese su nombre");
-let telefono = parseInt(prompt ("Ingrese su teléfono"));
-let edad = parseInt(prompt ("Ingrese su edad"));
-let saldo = parseFloat(prompt("Ingrese su saldo inicial:"));
-let deposito = parseFloat(prompt("Ingrese el monto a depositar:"));
+// Captura de datos
+let cantidadNotas = 3;
+let suma = 0;
 
-let nuevoSaldo = saldo + deposito;
-let mensaje = "Hola " + nombre + " tu nuevo saldo es $" + nuevoSaldo;
+// Bucle para pedir las notas
+for (let i = 1; i <= cantidadNotas; i++) {
+  let nota = parseFloat(prompt("Ingrese la nota " + i + ":"));
+  suma += nota;
+}
 
-console.log (mensaje);
-alert (mensaje);
+// Procesamiento
+let promedio = suma / cantidadNotas;
+
+// Condicional
+if (promedio >= 6) {
+  alert("Aprobado con promedio: " + promedio.toFixed(2));
+} else {
+  alert("Desaprobado con promedio: " + promedio.toFixed(2));
+}
